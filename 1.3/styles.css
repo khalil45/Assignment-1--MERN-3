@@ -1,0 +1,155 @@
+/* Global ==================================== */
+
+:root {
+  --soft-blue:hsl(215, 60%, 58%);
+  --cyan:hsl(178, 77%, 57%);
+  --alpha-cyan:hsl(178 100% 50% / 60%);
+
+  --dark-blue-main:hsl(216, 78%, 33%);
+  --dark-blue-card:hsl(216, 50%, 16%);
+  --dark-blue-line:hsl(215, 32%, 27%);
+  --white:hsl(0, 0%, 100%);
+
+  --trans-hover: all 300ms;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.125rem;
+  color: var(--soft-blue);
+  min-height: 100vh;
+  background-color: var(--dark-blue-main);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+ul {
+  list-style: none;
+}
+
+/* CARD ===================================== */
+
+main {
+  max-width: 21.875rem;
+  padding: 1.25rem;
+  background-color: var(--dark-blue-card);
+  border-radius: 0.625rem;
+}
+
+main h1 {
+  opacity: 0;
+  height: 0;
+}
+
+.nft-image {
+  display: flex;
+  position: relative;
+}
+
+.nft-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0.3125rem;
+  background: url() center no-repeat var(--alpha-cyan);
+  opacity: 0;
+  transition: var(--trans-hover);
+}
+
+.nft-image:hover::before {
+  opacity: 1;
+}
+
+.nft-image img {
+  width: 100%;
+  border-radius: 0.3125rem;
+}
+
+/* CARD body ================================== */
+
+.title {
+  margin: 1.25rem 0;
+  width: fit-content;
+  font-size: 1.4375rem;
+  color: var(--white);;
+}
+
+.title a {
+  transition: var(--trans-hover);
+  cursor: pointer;
+}
+
+.title a:hover {
+  color: var(--cyan);
+}
+
+.description {
+  font-weight: 300;
+  padding-bottom: 1.25rem;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.info li {
+  display: flex;
+  align-items: center;
+}
+
+.info img {
+  margin-right: 0.3125rem;
+}
+
+.info .price strong {
+  color: var(--cyan);
+  font-weight: 400;
+}
+
+/* CARD footer ================================== */
+
+.author {
+  border-top: 1px solid var(--dark-blue-line);
+  padding: 1rem 0;
+  
+  display: flex;
+  align-items: center;
+}
+
+.author img {
+  max-width: 2.1875rem;
+  padding: 1px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--white);
+  margin-right: 1rem;
+}
+
+.author figcaption a {
+  color: var(--white);
+  transition: var(--trans-hover);
+  cursor: pointer;
+}
+
+.author figcaption a:hover {
+  color: var(--cyan);
+}
